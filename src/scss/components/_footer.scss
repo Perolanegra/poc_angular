@@ -1,0 +1,13 @@
+.footer {
+
+   &-nav {
+   }
+
+   &-info {
+     
+      @include only-desktop {
+      }
+   }
+
+ 
+}

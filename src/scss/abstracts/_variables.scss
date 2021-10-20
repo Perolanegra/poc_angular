@@ -1,0 +1,60 @@
+//@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+$base-url: '/assets/' !default;
+$font-display: 'Roboto';
+$font-rounded: 'Roboto';
+$font-size--base: 16px;
+
+$header-line--height: 5px;
+$header--height: 60px;
+$nav-footer--height: 90px;
+$nav-sidebar--width: 100px;
+
+$nav-sidebar-overlay--zindex: 1;
+$nav-sidebar--zindex: 2;
+$modal-overlay--zindex: 3;
+$modal--zindex: 4;
+
+$black--color: #000000;
+$dark-blue1--color: #08091D;
+$dark-blue2--color: #0F1132;
+$dark-blue3--color: #1D2C38;
+$blue--color: #141742;
+$purple1--color: #241264;
+$purple2--color: #221261;
+$violet1--color: #3B1DA3;
+$violet2--color: #3D1FA5;
+$violet3--color: #794FD6;
+$red--color: #D02E2E;
+$red2--color: #F34505;
+$orange1--color: #FA7300;
+$orange2--color: #FF8A00;
+$orange3--color: #F39D05;
+$orange4--color: #FFB83C;
+$orange5--color: #FFF3DD;
+$green1--color: #3CA94A;
+$green2--color: #4ACE5B;
+$white--color: #FFFFFF;
+$yellow--color: #F39D05 ;
+$violet1--gradient-color: linear-gradient(180deg, $violet3--color 0%, $violet1--color 100%);
+$violet2--gradient-color: linear-gradient(180deg, $violet3--color 0%, $violet2--color 100%);
+$orange--gradient-color: linear-gradient(180deg, $orange4--color 0%, $orange2--color 100%);
+
+$black1--alpha-color: rgba(0, 0, 0, 0.12);
+$black2--alpha-color: rgba(0, 0, 0, 0.6);
+$black3--alpha-color: rgba(0, 0, 0, 0.87);
+$black4--alpha-color: rgba(0, 0, 0, 0.36);
+$blue--alpha-color: rgba(6, 41, 123, 0.12);
+$orange--alpha-color: rgba(243, 157, 5, 0.24);
+$gray--alpha-color: rgba(81, 81, 81, 0.6);
+$green--alpha-color: rgba(60, 169, 74, 0.5);
+$white--alpha-color: rgba(255, 255, 255, 0.45);
+$white2--alpha-color: rgba(255, 255, 255, 0.12);
+$white3--alpha-color: rgba(255, 255, 255, 0.72);
+
+$breakpoints: ('small': 567px,
+   'medium': 992px,
+   'large': 1200px,
+);
+
+$grey-background-active-btn--color: #dddddd;
+$grey2-background-active-btn--color: rgba(60, 64, 67, 0.04);

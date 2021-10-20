@@ -1,0 +1,16 @@
+.logo {
+   .img-logo {
+
+      @include only-mobile {
+         .sidebar-open & {
+            @include size(140px);
+
+         }
+      }
+
+      @include only-desktop {
+         @include size(140px);
+
+      }
+   }
+}

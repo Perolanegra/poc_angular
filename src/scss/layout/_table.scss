@@ -1,0 +1,20 @@
+.table {
+   
+
+   th:first-child,
+   td:first-child {
+   }
+
+   tbody::before {
+      content: "\200C";
+      display: block;
+   }
+
+   thead tr th {
+    
+   }
+
+   tbody tr td {
+   }
+
+}

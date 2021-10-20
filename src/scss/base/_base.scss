@@ -1,0 +1,42 @@
+html {
+   box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+   @extend %font-display;
+}
+
+:root {   
+   font-size: $font-size--base;
+   height: 100%;
+}
+
+body {   
+   background-color: $dark-blue1--color;
+   color: $white--color;
+   height: 100%;
+}
+
+* {
+   scrollbar-width: thin;
+   scrollbar-color: transparent; // $blue--color $dark-blue2--color;
+}
+
+*::-webkit-scrollbar {
+   width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+   background: transparent; // $blue--color;
+}
+
+*::-webkit-scrollbar-thumb {
+   width: 8px;
+
+   background-color: transparent; // $dark-blue2--color;
+   border-radius: 45px;
+   border: 5px solid transparent;
+}

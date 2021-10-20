@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "Roboto Bold";
+    src: url("./assets/fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Roboto Regular";
+    src: url("./assets/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Roboto Medium";
+    src: url("./assets/fonts/Roboto-Medium.ttf");
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

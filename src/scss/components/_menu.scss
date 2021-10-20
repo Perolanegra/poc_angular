@@ -1,0 +1,32 @@
+.menu {
+
+   @include only-tablet {
+      margin: 0;
+   }
+
+   &-item {
+
+      @include smaller-than-desktop {
+         &:nth-child(2n) {
+         }
+
+         &:nth-child(2n+1) {
+         }
+      }
+
+      @include only-tablet {
+        
+      }
+
+      @include only-desktop {
+       
+      }
+   }
+}
+
+
+@include smaller-than-desktop {
+   .onplay .sidebar .menu .menu-item:nth-child(n+2) {
+      // display: none;
+   }
+}

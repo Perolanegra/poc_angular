@@ -1,0 +1,42 @@
+ @mixin only-mobile {
+    @media (max-width: #{map-get($breakpoints, 'small')}) {
+       @content;
+    }
+ }
+ 
+ @mixin only-tablet {
+    @media (min-width: #{map-get($breakpoints, 'small')}) and (max-width: #{map-get($breakpoints, 'medium')}) {
+       @content;
+    }
+ }
+ 
+ @mixin only-desktop {
+    @media (min-width: #{map-get($breakpoints, 'medium')}) {
+       @content;
+    }
+ }
+ 
+ @mixin greater-than-mobile {
+    @media (min-width: #{map-get($breakpoints, 'small')}) {
+       @content;
+    }
+ }
+ 
+ @mixin smaller-than-desktop {
+    @media (max-width: #{map-get($breakpoints, 'medium')}) {
+       @content;
+    }
+ }
+ 
+ @mixin at-root-has($selector) {
+    @at-root #{$selector} #{&} {
+       @content;
+    }
+ }
+ 
+ @mixin at-root-not($selector) {
+    @at-root :not(#{$selector}) #{&} {
+       @content;
+    }
+ }
+ 

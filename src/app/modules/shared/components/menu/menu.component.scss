@@ -1,0 +1,13 @@
+.example-container {
+  width: 100vw;
+}
+
+.example-container .mat-drawer {
+  background-color: transparent;
+}
+
+@media only screen and (min-height: 800px) {
+  .example-container {
+    height: 100vh;
+  }
+}
