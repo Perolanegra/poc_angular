@@ -4,7 +4,7 @@ import {
   ElementRef,
   RendererFactory2,
 } from "@angular/core";
-import { AbstractControl } from "@angular/forms";
+import { AbstractControl, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 import { debounceTime, tap } from "rxjs/operators";
 
@@ -198,5 +198,11 @@ export class AppController {
       event.initEvent(eventName, true, true);
     }
     window.dispatchEvent(event);
+  }
+
+  public getFieldError(form: FormGroup, field: string, error: string): boolean {
+    const control = form.get(field);
+
+    return control?.invalid && (control?.dirty || control?.touched) && control?.errors?.[error];
   }
 }

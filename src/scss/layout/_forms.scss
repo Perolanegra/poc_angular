@@ -1,7 +1,10 @@
 .form {
-   
 
    &-group {
+
+      .mat-icon {
+         cursor: pointer;
+      }
 
       input {
 
@@ -21,11 +24,26 @@
       }
 
       .text-errors {
-        
+         margin-top: 5px;
+         display: grid;
+         grid-template-columns: auto;
+         grid-template-rows: auto;
 
          .text-error {
-        
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+            padding: 0 15px;
+
+            opacity: 0;
+
+            color: $red--color;
+            font-size: 11px;
+            line-height: 13px;
+
+            transition: all 0.5s ease;
+
             &.--show {
+               opacity: 1;
             }
          }
       }

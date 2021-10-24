@@ -36,6 +36,7 @@ import { MatTableModule } from "@angular/material/table";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatExpansionModule } from "@angular/material/expansion";
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 export const MY_FORMATS = {
   parse: {
@@ -74,6 +75,7 @@ export const MY_FORMATS = {
     MatSlideToggleModule,
     MatTooltipModule,
     MatExpansionModule,
+    MatFormFieldModule
     // MatTreeModule,
     // MatProgressBarModule
   ],
@@ -101,6 +103,7 @@ export const MY_FORMATS = {
     MatSlideToggleModule,
     MatTooltipModule,
     MatExpansionModule,
+    MatFormFieldModule
     // MatTreeModule,
     // MatProgressBarModule
   ],

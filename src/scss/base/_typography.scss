@@ -7,3 +7,8 @@
       font-family: ($font-rounded, sans-serif, none);
    }
 }
+
+
+.mat-typography p {
+   margin: unset;
+}

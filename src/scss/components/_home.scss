@@ -1,0 +1,30 @@
+.home {
+    .mat-form-field {
+        width: 30%;
+    }
+
+    .text-content {
+        p {
+            color: $grey3-paragraph--color;
+        }
+    }
+
+    .mat-stroked-button:not(.mat-button-disabled) {
+        border-color: $blue-base-menu--color;
+        background-color: $blue-base-menu--color;
+    }
+
+    .form-group {
+        margin-top: 10px;
+        button {
+            color: $white--color;
+            border-radius: 1px;
+            position: relative;
+            left: 20px;
+            height: 50px;
+            width: 200px;
+            top: -5px;
+            font-size: 16px;
+        }
+    }
+}

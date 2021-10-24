@@ -1,3 +1,45 @@
 .header {
-   
+    background-color: $white--color;
+    padding: 16px;
+    display: flex;
+    padding-bottom: unset;
+    height: 90px;
+
+    .static-breadcrumb {
+        display: flex;
+        flex-direction: column;
+        p {
+            position: relative;
+            top: -15px;
+            color: $grey3-paragraph--color;
+        }
+    }
+
+    .--buttons {
+        text-align: end;
+        width: 100%;
+        justify-content: flex-end;
+        flex: 1;
+
+        button {
+            &:nth-child(1) {
+                margin-right: 10px;
+                color: $blue-buttons-color;
+            }
+
+            &:nth-child(2) {
+                margin-right: 20px;
+                color: $blue-buttons-color;
+                border-radius: 50px;
+            }
+
+            &:nth-child(3) {
+                cursor: pointer;
+            }
+        }
+
+        .mat-stroked-button:not(.mat-button-disabled) {
+            border-color: $blue-buttons-color;
+        }
+    }
 }

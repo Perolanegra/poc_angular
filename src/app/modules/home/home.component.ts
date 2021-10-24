@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { MASKS, NgBrazilValidators } from "ng-brazil";
 import { AppController } from "../core/default/appController";
 
 @Component({
@@ -9,10 +10,31 @@ import { AppController } from "../core/default/appController";
 })
 export class HomeComponent implements OnInit {
   constructor(
-    private appController: AppController
-  ) {}
+    private fb: FormBuilder,
+    public appController: AppController
+  ) { }
+
+  public MASKS = MASKS;
+
+  form!: FormGroup;
 
   ngOnInit(): void {
-    
+    this.createForm();
+  }
+
+  createForm(): void {
+    this.form = this.fb.group({
+      cpf: ['', [Validators.required, NgBrazilValidators.cpf]],
+    });
+  }
+
+  getFieldError(field: string, error: string): boolean {
+    return this.appController.getFieldError(this.form, field, error);
+  }
+
+  submit(): void {
+    if(this.form.valid) {
+
+    }
   }
 }

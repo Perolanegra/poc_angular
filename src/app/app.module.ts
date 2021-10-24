@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppController } from './modules/core/default/appController';
-import { SharedModule } from './modules/shared/shared.module';
 import { AppMenuComponent } from './modules/menu/app-menu/app-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { environment } from 'src/environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HeaderComponent } from './modules/shared/components/header/header.component';
+import { MaterialModule } from './modules/material/material.module';
+import { MenuComponent } from './modules/shared/components/menu/menu.component';
 
 // export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
 //   return localStorageSync({ keys: reducerKeys, rehydrate: true })(reducer);
@@ -23,6 +25,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   declarations: [
     AppComponent,
     AppMenuComponent,
+    HeaderComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,8 +38,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
       logOnly: environment.production
     }),
     BrowserAnimationsModule,
-    SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule
   ],
   providers: [AppController],
   bootstrap: [AppComponent]

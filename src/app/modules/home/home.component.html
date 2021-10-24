@@ -1,1 +1,33 @@
-<h2>home works!</h2>
+
+<div class="home">
+
+    <div class="text-content">
+        <h2>Informe o CPF do futuro cooperado(a)</h2>
+        <p>Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este cadastro futuramente.</p>
+        <p>Digite apenas os números (sem pontos ou traços).</p>
+    </div>
+
+    <form class="form" novalidate [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label>CPF</mat-label>
+                <input matInput placeholder="057.353.304-23" formControlName="cpf" cpf
+                    [textMask]="{mask: MASKS.cpf.textMask}">
+                <mat-icon matSuffix (click)="form?.controls?.cpf?.setValue('')">close</mat-icon>
+    
+                <mat-error [class.--show]="form.controls.cpf.errors?.required && form.controls.cpf.touched">
+                    CPF é obrigatório.
+                </mat-error>
+                <mat-error [class.--show]="getFieldError('cpf', 'cpf')">
+                    CPF inválido.
+                </mat-error>
+            </mat-form-field>
+    
+            
+            <button mat-stroked-button color="primary">Consultar por CPF</button>
+    
+        </div>
+    
+    </form>
+
+</div>

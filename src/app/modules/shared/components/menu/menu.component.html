@@ -1,28 +1,16 @@
-<!-- <mat-drawer-container class="menu" [hasBackdrop]="'over'">
+<div id="sideMenu" class="sidebar">
 
-  <mat-drawer #drawer [mode]="'over'">
-    <ng-content select="[menuBody]"></ng-content>
-  </mat-drawer>
-  <ng-content select="[contentBody]"></ng-content>
-
-</mat-drawer-container> -->
-
-<!-- <div class="menu" [class.menu-mobile]="mobileQuery.matches">
-
-
-  
-</div> -->
-
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <div class="--content">
+    <button mat-icon-button (click)="toggleNav(!isOpen)"><mat-icon>menu</mat-icon></button>
+    <button mat-icon-button><mat-icon>search</mat-icon></button>
+    <button mat-icon-button><mat-icon >star_border</mat-icon></button>
+    <button mat-icon-button><mat-icon >message</mat-icon></button>
+    <button mat-icon-button><mat-icon >tune</mat-icon></button>
+    <button mat-icon-button><mat-icon >foundation</mat-icon></button>
+  </div>
+ 
 </div>
 
-<div id="main">
-  <button class="openbtn" (click)="openNav()">☰ Open Sidebar</button>  
-  <h2>Collapsed Sidebar</h2>
-  <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+<div id="main" [class.sidebar-overflow]="isOpen" (click)="isOpen ? toggleNav(false) : ''">
+  <ng-content select="[contentBody]"></ng-content>
 </div>

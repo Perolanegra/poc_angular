@@ -1,25 +1,22 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { CommonModule, CurrencyPipe } from "@angular/common";
-import { MaterialModule } from "../material/material.module";
-import { HeaderComponent } from './components/header/header.component';
-import { MenuComponent } from "./components/menu/menu.component";
 import { BoxbalancePipe } from './pipes/boxbalance.pipe';
+import { NgBrazil } from 'ng-brazil' 
+import { TextMaskModule } from "angular2-text-mask";
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule
+    NgBrazil,
+    TextMaskModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
-    MenuComponent,
-    HeaderComponent,
     BoxbalancePipe
   ],
   exports: [
-    MenuComponent,
-    HeaderComponent,
-    BoxbalancePipe
+    BoxbalancePipe,
+    TextMaskModule
   ],
   providers: [
     CurrencyPipe
