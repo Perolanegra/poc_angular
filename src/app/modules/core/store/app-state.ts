@@ -1,12 +1,12 @@
-import { ActionReducerMap } from '@ngrx/store';
-import { accountReducer } from './reducers/account/account.reducer';
+// import { ActionReducerMap } from '@ngrx/store';
+// import { accountReducer } from './reducers/account/account.reducer';
 
-export const reducerKeys = ['account'];
+// export const reducerKeys = ['account'];
 
-export interface AppState {
-  account: any;
-}
+// export interface AppState {
+//   account: any;
+// }
 
-export const reducers: ActionReducerMap<AppState> = {
-  account: accountReducer,
-};
+// export const reducers: ActionReducerMap<AppState> = {
+//   account: accountReducer,
+// };
