@@ -16,6 +16,12 @@ export class HomeComponent implements OnInit {
 
   public MASKS = MASKS;
 
+  private mock = {
+    cpf: '322.697.800-43'
+  };
+
+  showResults: boolean = false;
+
   form!: FormGroup;
 
   ngOnInit(): void {
@@ -34,7 +40,7 @@ export class HomeComponent implements OnInit {
 
   submit(): void {
     if(this.form.valid) {
-
+      this.showResults = true;
     }
   }
 }

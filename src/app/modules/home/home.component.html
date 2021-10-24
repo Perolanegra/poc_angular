@@ -1,4 +1,3 @@
-
 <div class="home">
 
     <div class="text-content">
@@ -14,7 +13,7 @@
                 <input matInput placeholder="057.353.304-23" formControlName="cpf" cpf
                     [textMask]="{mask: MASKS.cpf.textMask}">
                 <mat-icon matSuffix (click)="form?.controls?.cpf?.setValue('')">close</mat-icon>
-    
+
                 <mat-error [class.--show]="form.controls.cpf.errors?.required && form.controls.cpf.touched">
                     CPF é obrigatório.
                 </mat-error>
@@ -22,12 +21,88 @@
                     CPF inválido.
                 </mat-error>
             </mat-form-field>
-    
-            
+
+
             <button mat-stroked-button color="primary">Consultar por CPF</button>
-    
         </div>
-    
     </form>
+
+    <div *ngIf="showResults" class="box-results">
+        <div class="item-box">
+            <div class="item-header">
+                <h4><strong>Situação Cadastral do CPF</strong></h4>
+                <p>Consulta na Receita Federal</p>
+            </div>
+
+            <div class="item-content">
+
+                <div class="content-row">
+                    <button mat-icon-button>
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                    <div>
+                        <span>Nome</span>
+                        <p>Mariane de Sousa Oliveira</p>
+                    </div>
+                </div>
+
+
+                <div class="content-row">
+                    <button mat-icon-button>
+                        <mat-icon>check_circle</mat-icon>
+                    </button>
+                    <div>
+                        <span>Situação do CPF</span>
+                        <p>Regular</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item-box" >
+            <div class="item-header">
+                <h4><strong>Conta aplicação</strong></h4>
+                <p>Cooperativa Viacredi</p>
+            </div>
+
+            <div class="item-content">
+
+                <div class="content-row">
+                    <button mat-icon-button>
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                    <div>
+                        <span>Número da conta</span>
+                        <p>557932-4</p>
+                    </div>
+                </div>
+
+                <a>Duplicar Conta</a>
+            </div>
+        </div>
+
+        <div class="item-box" >
+            <div class="item-header">
+                <h4><strong>Conta corrente</strong></h4>
+                <p>Cooperativa Viacredi</p>
+            </div>
+
+            <div class="item-content">
+
+                <div class="content-row">
+                    <button mat-icon-button>
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                    <div>
+                        <span>Número da conta</span>
+                        <p>778461-8</p>
+                    </div>
+                </div>
+
+                <a>Duplicar Conta</a>
+            </div>
+        </div>
+
+    </div>
 
 </div>
