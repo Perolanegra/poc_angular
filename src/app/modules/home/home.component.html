@@ -10,9 +10,9 @@
         <div class="form-group">
             <mat-form-field appearance="outline">
                 <mat-label>CPF</mat-label>
-                <input matInput placeholder="057.353.304-23" formControlName="cpf" cpf
+                <input matInput placeholder="057.353.304-23" (keydown)="typing($event)" formControlName="cpf" cpf
                     [textMask]="{mask: MASKS.cpf.textMask}">
-                <mat-icon matSuffix (click)="form?.controls?.cpf?.setValue('')">close</mat-icon>
+                <mat-icon matSuffix (click)="clearState()">close</mat-icon>
 
                 <mat-error [class.--show]="form.controls.cpf.errors?.required && form.controls.cpf.touched">
                     CPF é obrigatório.

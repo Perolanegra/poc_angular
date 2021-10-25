@@ -5,3 +5,5 @@ import { accountFeatureKey } from '../../reducers/account/account.reducer';
 const feature = createFeatureSelector<AccountState>(accountFeatureKey);
 
 export const getUserCpf = createSelector(feature, state => state.cpf);
+
+export const getNoRegisteredCpf = createSelector(feature, state => state.hasNoRegisterCpf);

@@ -8,18 +8,22 @@ export const initialState: AccountState = {
   cpf: '',
   id: '',
   password: '',
-  username: ''
+  username: '',
+  hasNoRegisterCpf: false
 };
 
 export function reducer(state = initialState, action: Actions.AccountActions): AccountState {
 
   switch (action.type) {
 
-    case Actions.AccountActionTypes.UpdateAccountState:
-      return { ...state, ...action.payload };
+    case Actions.AccountActionTypes.StoreAccountAction:
+      return { ...action.payload };
 
-    case Actions.AccountActionTypes.ClearAccountState:
-      return { ...state };
+    case Actions.AccountActionTypes.ClearAccountAction:
+      return { cpf: '', balance: '', id: '', password: '', username: '', hasNoRegisterCpf: false };
+
+    case Actions.AccountActionTypes.SetNoRegisteredCpfAction:
+      return { ...state, hasNoRegisterCpf: true };
 
     default:
       return state;

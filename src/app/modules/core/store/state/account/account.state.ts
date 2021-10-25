@@ -4,4 +4,5 @@ export interface AccountState {
   password: string;
   balance: string;
   cpf: string;
+  hasNoRegisterCpf?: boolean
 }

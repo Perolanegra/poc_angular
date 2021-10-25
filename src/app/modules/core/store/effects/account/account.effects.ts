@@ -1,36 +1,39 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, mergeMap, switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
+import { HomeService } from 'src/app/modules/home/home.service';
 
-// import * as TransactionsActions from './transactions.actions';
-// import * as ModalsActions from '../../modals/store/modals.actions';
-
+import * as AccountActions from '../../actions/account/account.action';
 
 @Injectable()
 export class AccountEffects {
 
   constructor(
-    // private actions$: Actions,
-    // private transactionService: service,
+    private actions$: Actions,
+    private service: HomeService
   ) { }
 
-//   getCpf$ = createEffect(() =>
-//     this.actions$.pipe(
-//       ofType<TransactionsActions.GetCPFAction>(TransactionsActions.TransactionsActionTypes.PinDeposit),
-//       switchMap(action =>
+  getAccount$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType<AccountActions.GetAccountAction>(AccountActions.AccountActionTypes.GetAccountAction),
+      mergeMap(action =>
 
-//         this.transactionService.getCpf(action.payload.pin)
-//           .pipe(
-//             mergeMap(res => [
-//               new TransactionsActions.GetCpf(res)
-//             ]),
-//             catchError(err => [
-//                 new TransactionsActions.GetCpf(res)
-//             ])
-//           )
+        this.service.validateCpf(action.payload)
+          .pipe(
+            mergeMap((res: any) => {
+              if(!res.length) {
+                return of (new AccountActions.SetNoRegisteredCpfAction())
+              }
+              return of(new AccountActions.StoreAccountAction(res[0])); // estrutura que o db.json retorna
+            }),
+            // catchError(err => [
+            //   alert('Operação Indisponível no moment. Por favor, tente mais tarde.'),
+            // ])
+          )
 
-//       )
-//     )
-//   );
+      )
+    )
+  );
 
 }
