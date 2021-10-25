@@ -9,6 +9,7 @@ import { EffectsModule } from "@ngrx/effects";
 import { accountFeatureKey, reducer } from "../core/store/reducers/account/account.reducer";
 import { AccountEffects } from "../core/store/effects/account/account.effects";
 import { SharedModule } from "../shared/shared.module";
+import {MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -18,7 +19,8 @@ import { SharedModule } from "../shared/shared.module";
     HomeRoutingModule,
     StoreModule.forFeature(accountFeatureKey, reducer),
     EffectsModule.forFeature([AccountEffects]),
-    SharedModule
+    SharedModule,
+    MatStepperModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [

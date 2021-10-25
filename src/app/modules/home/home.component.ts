@@ -7,11 +7,15 @@ import { AppController } from "../core/default/appController";
 import { ClearAccountAction, GetAccountAction } from "../core/store/actions/account/account.action";
 import { getNoRegisteredCpf, getUserCpf } from "../core/store/selectors/account/account.selectors";
 import { AccountState } from "../core/store/state/account";
+import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.scss"],
+  providers: [{
+    provide: STEPPER_GLOBAL_OPTIONS, useValue: {displayDefaultIndicatorType: false}
+  }]
 })
 export class HomeComponent implements OnInit, OnDestroy {
   constructor(

@@ -39,7 +39,7 @@ import { MenuComponent } from './modules/shared/components/menu/menu.component';
     }),
     BrowserAnimationsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [AppController],
   bootstrap: [AppComponent]
