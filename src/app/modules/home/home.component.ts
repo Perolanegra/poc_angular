@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MASKS, NgBrazilValidators } from "ng-brazil";
 import { AppController } from "../core/default/appController";
+import { HomeService } from "./home.service";
 
 @Component({
   selector: "app-home",
@@ -11,14 +12,11 @@ import { AppController } from "../core/default/appController";
 export class HomeComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
-    public appController: AppController
+    private appController: AppController,
+    private homeService: HomeService
   ) { }
 
   public MASKS = MASKS;
-
-  private mock = {
-    cpf: '322.697.800-43'
-  };
 
   showResults: boolean = false;
 
@@ -40,7 +38,13 @@ export class HomeComponent implements OnInit {
 
   submit(): void {
     if(this.form.valid) {
-      this.showResults = true;
+      this.homeService.validateCpf(this.form.controls.cpf.value)
+      .subscribe(res => {
+        if(res.length) {
+          console.log('res: ', res);
+          this.showResults = true;
+        }
+      });
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-    "user": 
+    "users": [
         {
             "id": 1,
             "username": "test@test.com",
@@ -7,5 +7,6 @@
             "balance": 13000.05,
             "cpf": "498.438.110-89"
         }
+    ]
     
 }
